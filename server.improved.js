@@ -1,4 +1,4 @@
-const express = require( 'express' ),
+/*const express = require( 'express' ),
       mongodb = require( 'mongodb' ),
       app = express()
 
@@ -31,7 +31,7 @@ app.get( '/', (req,res) => {
   }
 })
   
-app.listen( 3000 )
+app.listen( 3000 )*/
 
 const http = require("http"),
   fs = require("fs"),
@@ -62,7 +62,7 @@ const handleGet = function (request, response) {
   const filename = dir + request.url.slice(1);
 
   if (request.url === "/") {
-    sendFile(response, "public/authenticate.html");
+    sendFile(response, "public/index.html");
   } else if (request.url === "/getFormData"){
     response.writeHeader(200, {"Content-Type": "text/plain"});
     response.end(JSON.stringify(appdata));
